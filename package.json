@@ -1,0 +1,12 @@
+{
+  "name": "backbone-virtualcollection-split",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Burhan Zainuddin <burhan@codeyellow.nl>",
+  "description": "Automatically split a Backbone collection into multiple Virtual Collections based on a key.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeYellowBV/backbone-virtualcollection-split"
+  },
+  "main": "index.js"
+}
