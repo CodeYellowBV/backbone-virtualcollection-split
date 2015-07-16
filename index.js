@@ -8,8 +8,19 @@
   }
 }(this, function(Backbone, _, VirtualCollection) {
     return function(collection, key) {
-        var cSplit = new Backbone.Collection(),
-            cVirtualCollectionTemp = new VirtualCollection(collection, {
+        var MSplit = Backbone.Model.extend({
+            initialize: function () {
+                this.listenTo(this.get('collection'), 'remove reset', function () {
+                    if (this.get('collection').length === 0) {
+                        this.collection.remove(this);
+                    }
+                }.bind(this));
+            }
+        }),
+        cSplit = new Backbone.Collection(null, {
+            model: MSplit
+        }),
+        cVirtualCollectionTemp = new VirtualCollection(collection, {
             filter: function (model) {
                 var splitBy = model.get(key),
                     collection = this.collection;

@@ -20,5 +20,5 @@ var collection = new Backbone.Collection([{
     name: 'de vries'
 }]);
 
-new SplitCollection(collection, '');
+var foo = new SplitCollection(collection, '');
 ```
